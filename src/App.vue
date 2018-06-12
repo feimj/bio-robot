@@ -28,18 +28,19 @@
         interval: 5,
         currentStyle: '',
         enableHtml: false,
-        fullStyle: [
-          `/*
-* Inspired by http://strml.net/
-* Source code at https://github.com/sitexa/anires
-* 大家好，我是南方。
-* 我来写一份简历！
-*/
+        fullStyle: [`
+/**
+ * Inspired by http://www.sitexa.org/anires/public/
+ * Source code at https://github.com/sitexa/anires/
+ * 您好，我是何敏健。
+ * 现在，我用代码来写一份简历！
+ */
 
 /* 给所有元素加上过渡效果 */
 * {
   transition: all .1s;
 }
+
 /* 设置背景颜色 */
 html {
   color: rgb(222,222,222); background: rgb(0,64,64);
@@ -59,9 +60,11 @@ html {
   border: 1px solid;
   margin: .5em;
   overflow: auto;
-  width: 50vw; height: 70vh;
+  width: 50vw; 
+  height: 70vh;
   background: rgb(20,20,20);
 }
+
 /* 代码高亮 */
 .token.selector{ color: rgb(130,150,0); }
 .token.property{ color: rgb(190,140,0); }
@@ -80,7 +83,7 @@ html{
           transform: rotateY(10deg) translateZ(-100px) ;
 }
 
-/* 准备一个编辑器 */
+/* 准备一个文本框，请看右边... */
 .resumeEditor{
   position: fixed; right: 0; top: 30;
   padding: .5em;  margin: .5em;
@@ -93,11 +96,13 @@ html{
   -webkit-transform: rotateY(-10deg) translateZ(-100px) ;
           transform: rotateY(-10deg) translateZ(-100px) ;
 }
-/* 开始写简历 */
-`, `
-/*将Markdown格式翻译成HTML
- *再对HTML加点样式
-*/
+
+/* 开始写简历，请看右边... */`, `
+
+/**
+ * 将Markdown格式翻译成HTML
+ * 再对HTML加点样式
+ */
 .resumeEditor{
   padding: 2em;
 }
@@ -125,26 +130,30 @@ html{
   margin: 1em;
   padding: .5em;
   background: #ddd;
-}
-`, `/* 写封感谢信。
- * 感谢大家对我的关注。
- */
+}`, `
+
+/* 写点感谢语，请看下方... */
 .thankEditor{
-  position: fixed; left: 0; bottom: 0;
-  padding: .5em;  margin: .5em; margin-top:.2em;
+  position: fixed;
+  left: 1vw;
+  bottom: 5vh;
+  padding: .5em;  
+  margin: .5em; 
+  margin-top:.2em;
   font-size: .8em;
-  width: 99vw; height: 28vh;
+  width: 97vw; 
+  height: 20vh;
   border: 1px solid #ccc;
   background: rgb(10,10,10);
   color: rgb(0,200,0);
   overflow: auto;
 }
-
 .thankEditor ul,.thankEditor ol{
   list-style: none;
 }
 .thankEditor ul> li::before{
-  content: '☞'; color: red;
+  content: '☞'; 
+  color: red;
   margin-right: .5em;
 }
 .thankEditor ol {
@@ -154,16 +163,16 @@ html{
   counter-increment: section;
   content: counters(section, "☞") " ";
   margin-right: .5em;
-}
-`],
+}`],
         currentMarkdown: '',
         currentThankMarkdown: '',
-        fullMarkdown: `南方
+        fullMarkdown: `
+何敏健
 ====
 
-坐标：湖南长沙。
+广东广州
 
-资深软件工程师，资深产品经理，高级项目经理。现为自由职业。
+Java软件工程师 物联网项目经理 现为自由职业
 
 技能
 ====
@@ -171,109 +180,66 @@ html{
 数据库设计
 ----
   - 结构化数据库设计
-  - noSQL设计
 
 后端开发
 ----
   - 用户管理
   - 单点登录
-  - 第三方登录
   - 权限管理
-  - 交易系统
-  - 支付系统
-  - 社区系统
-  - 博客系统
-  - 公众号开发
-  - 小程序开发
-  - API接口开发
+  - 设备管理
+  - 空间管理
+  - 实时监控
+  - 历史管理
+  - 生产管理
+  - 加工管理
+  - 质检管理
+  - 物流管理
+  - 远程控制
 
 前端开发
 ----
   - Web前端开发
-  - 移动终端(Native App, Hybrid App)
 
-产品设计
+项目经验
 ----
-  - 智慧旅游项目
-  - 运动健康云平台
-  - 社区支持农业O2O项目
-  - 省级环境监控平台
-  - 高速公路异地处罚系统
-  - 环保局办公自动化系统
-  - 保险公司数据迁移项目
-  - 啤酒厂供应链项目
-  - 货运代理系统
-  - 集装箱管理系统
-  - 滞期费管理项目
+  - 2017/03 - 2018/04 智慧农业大棚
+  - 2016/08 - 2017/01 智能交通沙盘
+  - 2016/06 - 2016/08 智慧农业生产过程追溯系统
+  - 2016/04 - 2016/06 智能环境监测系统
+  - 2015/07 - 2016/03 智能家居控制系统
 
 技术及语言
 ----
-  - Java: SpringMVC, SpringCloud, Hibernate, iBatis, spark, sql2o, HikariCP, freemarker, okHttp, retrofit, RxJava
-  - Kotlin: ktor, exposed, anko
-  - Node.js: express, angular, ionic, react, cordova, meteor, electron, axios
-  - Swift: Vapor, ReactiveSwift
-  - Golang: hugo, beego, gorm, sqlx, matcha
-  - Python: tushare, pandas, numpy, matplotlib
-  - DotNet and PHP
-  - DB: SQLServer, Oracle, MySQL/MariaDB, MongoDB, graphQL, redis, memcached
-  - WebServer: apache, nginx, tomcat, netty, jetty
-  - OS: Ubuntu, CentOS, MacOS, Windows
-  - Others: Docker, git, Xmind，Axure
+  - Java: Struts2, SpringMVC, Tiles, Spring, SpringData JPA, QueryDSL, Hibernate, Mina, POI, ITEXT, Flyway, CAS
+  - DB: MySQL, SQLServer
+  - WebServer: Nginx, Tomcat
+  - OS: Windows, Ubuntu
+  - UI: Bootstrap, EasyUI, HIGHCHARTS, ECHARTS, Font Awesome, jQuery Validation, jQuery Mockjax 
+  - Others: SVN, GIT, Powershell
 
 工作经历
 ----
 
-1. 湖南融耀健康管理有限公司
-2. 湖南三英特旅游智能技术有限公司
-3. 合肥蓝盾科技有限公司
-4. 上海易保网络有限公司
-5. 厦门海环计算机软件有限公司
+1. 2015/05 - 2018/06 广州飞瑞敖电子科技股份有限公司 
+   Java软件工程师兼项目经理
 
 教育经历
 ----
 
-1. 华东理工大学 环境工程学士
-2. 厦门大学 系统工程硕士
+1. 2011/09 - 2015/06 华南农业大学 信息与计算科学 学士
 
-文章
+联系方式
 ----
 
-* [故土难离（我的父亲母亲）](https://www.meipian.cn/qacqfbz?uuid=d541c15eef694065bc9d1ac9a07925a2)
-* [油腻腻的中年（小诗）](https://www.meipian.cn/wjaz3zh?uuid=ca1cd053b717451da781786de44e66e7)
-* [生命（老四们的蝼蚁人生）](https://www.meipian.cn/vc4pr59?uuid=799c98f5a187405c94c86f7da7788869)
-* [大健康商业模式](http://www.sitexa.org/technology/%E5%A4%A7%E5%81%A5%E5%BA%B7%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F.html)
-* [社区社交商业模型](http://www.sitexa.org/other/%E7%A4%BE%E5%8C%BA%E7%A4%BE%E4%BA%A4%E5%95%86%E4%B8%9A%E6%A8%A1%E5%9E%8B.html)
-
-链接
+* 微信：FEI_MJ
+* QQ：fei_mj
+* 手机：15017528321
+* 邮箱：15017528321@163.com`, 
+        thanksMarkdown: `感谢耐心观看！
 ----
 
-* [GitHub](https://github.com/sitexa)
-* [技术博客](http://www.sitexa.org)
-* [南方时代](http://www.sitexa.net)
-* [神秘湘鄂西](http://www.sitexa.cn)
-* [我的简历故事(程序人生公众号文章)](https://mp.weixin.qq.com/s/5rsB956EPVm0FoFOe6xYTg)
-
-勾引方式
-----
-
-* 微信：xnpeng
-
-`, thanksMarkdown: `鸣谢
-----
-
-* 这段时间，我有些诚煌诚恐，无地自容。我的经历都是一些小公司的软件开发，做着做着就成了Team leader，做过架构、产品、管理，做了好几个行业，技术栈全而不深。
-* 到底适合做什么岗位，我也不好定位，其实也没得选择。除了美工不会做，其他的都会点。近几年，主要在JVM平台上做开发，特别是自(shi)由(ye)之后，我主要学习了Kotlin和NodeJS相关技术，同时也玩玩Python和GoLang。
-* 自认为学习能力强，追求完美，不管是商业模式，还是产品设计，或者技术架构，以及代码开发，都追求优美。但都被残酷的现实挤压得很骨感。
-* 一直以来，我对社交和电商很感兴趣，伴随着QQ和微信的成长、体验着阿里和京东的发展，见证了美团和大众点评的成功，思考过Facebook、twitter、YouTube、Snapchat、Whatsapp、Medium为什么在国外能够斗争发展，对一些新模式新技术比如共享单车、区块链有些关注，因为自由嘛，不受约束地接触各种技术（玩具）。
-* 在社交领域，腾讯独霸天下20年，在电商领域，毫无疑问，是阿里的天下，虽有京东、苏宁等后起之秀，但都没有革命性的模式或产品。美团在团购领域的成功，既迎合了中国消费者的心理，也强化了这种心理。这些公司和老板都是我无比崇拜的IT英雄！
-* 社交是一种形式，电商是变现模式，将二者结合起来会是一个什么样子呢？很多探索者已经在理论上和实践上做过很多尝试，有人号称社交电商，我不知对不对。
-* 我的思考是这样的，陌生社交和熟人社交之间有一个巨大的中间地带，即半生不熟的社区社交（园区社交），目前QQ群和微信群在承担这个工作，实际上不能满足现实需求。
-* 阿里电商（单中心）和微商（无中心）电商之间存在着一个巨大的中间地带，即社区电商（多中心），虽然有很多个创业团队做过多年的尝试，比如小区无忧，社区001，国安社区等等，都投入了大量资金，但我看不到什么革命性的模式。
-* 我的想法是用社交带来流量，通过电商变现。我是不是有点异想天开？
-* 有很多企业向我发出了面试邀请，有很多创业团队向我伸出了橄榄枝，一些朋友给我提出非常好的建议，还有很多同行同学们希望跟我进行技术交流，甚至有些企业问我能否承接外包业务。
-* 在此，我要对所有的所有，说一声谢谢，谢谢你们对我的关心和支持！有你们的存在，让我对明天充满希望，对未来充满信心！不管有没有找到合适的工作，我认识了一群朋友，我非常满意！
-* 我回复了一些朋友的信息，还有很多朋友的信息我没能及时回复，在此，我表示深深的歉意！
-  `
+* 此项目的创意及源代码均非原创，仅出于好奇进行非商业性质的修改，如有侵权请多多包涵，谢谢。
+* 何敏健 2018.05.24`
       }
     },
     created() {
