@@ -8,7 +8,7 @@
 3. 执行以下命令：
 
 ``` bash
-git clone https://github.com/feimj/resume-create-robot.git
+git clone git@github.com:feimj/bio-robot.git
 cd feimj
 npm install
 npm run dev
