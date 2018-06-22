@@ -7,7 +7,8 @@
 
 3. 执行以下命令：
 
-``` bash
+``` 
+bash
 git clone git@github.com:feimj/bio-robot.git
 cd feimj
 npm install
@@ -16,7 +17,7 @@ npm run dev
 
 ## 部署方法
 
-1. 编辑 config/index.js，修改第 10 行的 assetsPublicPath，值为 `项目名/public`。如果你没有修改项目名 anires，则可跳过此步骤。
+1. 编辑 config/index.js，修改第 10 行的 assetsPublicPath，值为 `项目名/public`。如果你没有修改项目名 feimj，则可跳过此步骤。
 
 2. 编译、上传
     
